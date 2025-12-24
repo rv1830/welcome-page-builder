@@ -3,76 +3,93 @@ import { Star } from "lucide-react";
 const Testimonials = () => {
   const testimonials = [
     {
-      quote: "LAPS transformed our outreach. We went from 5 to 25 meetings per week without adding headcount.",
+      quote: "LAPS replaced our CRM, Calendly, and email tool. We went from 5 sales meetings a week to 25 without adding headcount. The automation is genuinely game-changing.",
       author: "Sarah Chen",
       role: "VP of Sales",
       company: "TechFlow",
       avatar: "SC",
     },
     {
-      quote: "The AI sequences feel genuinely personal. Our response rates jumped 40% in the first month.",
+      quote: "The AI qualification saved us hundreds of hours. It correctly identifies hot leads 90% of the time, so my team only focuses on prospects ready to buy.",
       author: "Marcus Johnson",
       role: "Sales Director",
       company: "ScaleUp Inc",
       avatar: "MJ",
     },
     {
-      quote: "Finally, a sales tool that actually saves time. Our team focuses on closing, not data entry.",
+      quote: "We were paying $800/month for 6 different tools. LAPS gave us everything in one place for a fraction of the cost. The proposal generator alone was worth switching.",
       author: "Emily Rodriguez",
-      role: "Head of Growth",
-      company: "Velocity",
+      role: "Founder",
+      company: "Velocity Agency",
       avatar: "ER",
+    },
+    {
+      quote: "Finally, an automation tool that lets me stay in control. The Assisted mode means nothing goes out without my approval, but I still save 10+ hours per week.",
+      author: "David Kim",
+      role: "Consultant",
+      company: "Growth Partners",
+      avatar: "DK",
+    },
+    {
+      quote: "The booking links + automatic reminders cut our no-show rate from 30% to 5%. That's real money back in our pipeline every single month.",
+      author: "Lisa Thompson",
+      role: "Head of Sales",
+      company: "CloudNine",
+      avatar: "LT",
+    },
+    {
+      quote: "I was skeptical about another 'all-in-one' tool, but LAPS actually delivers. The workflow builder is more powerful than Zapier for sales-specific use cases.",
+      author: "Alex Rivera",
+      role: "CEO",
+      company: "Momentum Labs",
+      avatar: "AR",
     },
   ];
 
   return (
-    <section className="relative py-24 lg:py-32 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-dark" />
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="testimonials" className="section-padding relative overflow-hidden">
+      <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block text-primary text-sm font-semibold tracking-wider uppercase mb-4">
             Testimonials
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-            Loved by <span className="text-gradient">Sales Teams</span>
+            Loved by <span className="text-gradient">Sales Teams</span> Everywhere
           </h2>
           <p className="text-lg text-muted-foreground">
-            See why thousands of companies trust LAPS to power their sales engine.
+            Join thousands of sellers who've transformed their sales process with LAPS.
           </p>
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.author}
-              className="group relative p-6 lg:p-8 rounded-2xl bg-gradient-card border border-border hover:border-primary/30 transition-all duration-500"
+              className="group p-6 rounded-2xl bg-card border border-border card-hover"
             >
               {/* Stars */}
-              <div className="flex items-center gap-1 mb-6">
+              <div className="flex items-center gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-accent-yellow text-accent-yellow" />
                 ))}
               </div>
 
               {/* Quote */}
-              <blockquote className="text-foreground leading-relaxed mb-8">
+              <blockquote className="text-foreground leading-relaxed mb-6 text-sm">
                 "{testimonial.quote}"
               </blockquote>
 
               {/* Author */}
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center">
-                  <span className="text-sm font-semibold text-primary">{testimonial.avatar}</span>
+                <div className="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center">
+                  <span className="text-xs font-semibold text-primary">{testimonial.avatar}</span>
                 </div>
                 <div>
-                  <div className="font-semibold text-foreground">{testimonial.author}</div>
-                  <div className="text-sm text-muted-foreground">
-                    {testimonial.role} at {testimonial.company}
+                  <div className="font-semibold text-foreground text-sm">{testimonial.author}</div>
+                  <div className="text-xs text-muted-foreground">
+                    {testimonial.role}, {testimonial.company}
                   </div>
                 </div>
               </div>
